@@ -8,6 +8,6 @@ audio_stop_sound(f);
 /// @DnDAction : YoYo Games.Rooms.Go_To_Room
 /// @DnDVersion : 1
 /// @DnDHash : 199D3ABB
-/// @DnDArgument : "room" "room3"
+/// @DnDArgument : "room" "Bumker"
 /// @DnDSaveInfo : "room" "b073f734-5eec-421a-8d26-667ce7f7fc91"
-room_goto(room3);
+room_goto(Bumker);

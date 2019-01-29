@@ -15,6 +15,6 @@ audio_play_sound(syp, 0, 0);
 /// @DnDAction : YoYo Games.Rooms.Go_To_Room
 /// @DnDVersion : 1
 /// @DnDHash : 22008781
-/// @DnDArgument : "room" "room0"
+/// @DnDArgument : "room" "Boss"
 /// @DnDSaveInfo : "room" "98ac262f-2fe5-4d64-9cda-10f3dc941256"
-room_goto(room0);
+room_goto(Boss);

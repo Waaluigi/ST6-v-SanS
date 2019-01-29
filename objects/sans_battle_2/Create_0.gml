@@ -1,9 +1,9 @@
 /// @DnDAction : YoYo Games.Instance Variables.Set_Health
 /// @DnDVersion : 1
 /// @DnDHash : 7234DBF0
-/// @DnDArgument : "health" "1000"
+/// @DnDArgument : "health" "100"
 
-__dnd_health = real(1000);
+__dnd_health = real(100);
 
 /// @DnDAction : YoYo Games.Timelines.Set_Timeline
 /// @DnDVersion : 1
@@ -34,7 +34,8 @@ path_start(path0, 15, path_action_continue, false);
 /// @DnDVersion : 1
 /// @DnDHash : 05AFC771
 /// @DnDApplyTo : d15a6853-054b-43a9-a280-679440b4e4b1
-with(boss_room) path_speed = 1;
+/// @DnDArgument : "speed" "100"
+with(boss_room) path_speed = 100;
 
 /// @DnDAction : YoYo Games.Audio.Play_Audio
 /// @DnDVersion : 1
@@ -44,21 +45,21 @@ with(boss_room) path_speed = 1;
 /// @DnDSaveInfo : "soundid" "0adfac96-1839-4d29-8514-d9102fd7ffb3"
 audio_play_sound(sound7, 0, 1);
 
-/// @DnDAction : YoYo Games.Common.If_Variable
+/// @DnDAction : YoYo Games.Instance Variables.If_Health
 /// @DnDVersion : 1
-/// @DnDHash : 5E203EED
-/// @DnDArgument : "var" "health"
-if(health == 0)
+/// @DnDHash : 74340AE7
+if(!variable_instance_exists(id, "__dnd_health")) __dnd_health = 0;
+if(__dnd_health == 0)
 {
-	/// @DnDAction : YoYo Games.Instances.Destroy_Instance
-	/// @DnDVersion : 1
-	/// @DnDHash : 2D13BC32
-	/// @DnDParent : 5E203EED
-	instance_destroy();
-
 	/// @DnDAction : YoYo Games.Audio.Stop_All_Audio
 	/// @DnDVersion : 1
-	/// @DnDHash : 73498090
-	/// @DnDParent : 5E203EED
+	/// @DnDHash : 6CE000F4
+	/// @DnDParent : 74340AE7
 	audio_stop_all();
+
+	/// @DnDAction : YoYo Games.Game.Restart_Game
+	/// @DnDVersion : 1
+	/// @DnDHash : 4DC23FA3
+	/// @DnDParent : 74340AE7
+	game_restart();
 }

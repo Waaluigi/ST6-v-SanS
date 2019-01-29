@@ -2,11 +2,11 @@
 /// @DnDVersion : 1
 /// @DnDHash : 5AB32F63
 /// @DnDApplyTo : 04c44cdd-1fc9-4bf9-b0d3-2a61825b930d
-/// @DnDArgument : "health" "-5"
+/// @DnDArgument : "health" "-3"
 /// @DnDArgument : "health_relative" "1"
 with(leftboi) {
 if(!variable_instance_exists(id, "__dnd_health")) __dnd_health = 0;
-__dnd_health += real(-5);
+__dnd_health += real(-3);
 }
 
 /// @DnDAction : YoYo Games.Instances.Destroy_Instance
